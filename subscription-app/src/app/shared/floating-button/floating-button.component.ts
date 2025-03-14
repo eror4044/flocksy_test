@@ -7,8 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class FloatingButtonComponent {
 
-  @Input() iconSrc: string = '';
-
   @Input() altText: string = 'Floating button';
   onClickButton(): void {
     console.log('Floating button clicked!');

@@ -16,7 +16,7 @@ export class PlanSelectionComponent implements OnInit {
     { name: "Platinum Plan", monthlyPrice: 95, quantity: 0, price: 0 },
   ];
 
-  quantities = Array.from({ length: 11 }, (_, i) => i); // 0..10
+  quantities = Array.from({ length: 11 }, (_, i) => i);
 
   constructor(private cartService: CartService) {}
 
