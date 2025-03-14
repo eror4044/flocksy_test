@@ -41,9 +41,6 @@
   font-weight: 600;
 }
 
-.plan-selection{
-  display: block;
-}
 @media (max-width: 480px) {
   .plan-selection{
     display: flex;
