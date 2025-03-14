@@ -1,0 +1,13 @@
+.plan-item {
+  border: 1px solid #e7e7e7;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-price{
+  font-size: 1rem;
+  font-weight: 600;
+}

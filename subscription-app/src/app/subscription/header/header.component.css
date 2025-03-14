@@ -1,0 +1,10 @@
+.contact-info {
+  font-size: 0.9rem;
+  color: #555;
+}
+.contact-info strong {
+  color: blue;
+}
+.subscription-header {
+  border-bottom: 1px solid #e7e7e7;
+}

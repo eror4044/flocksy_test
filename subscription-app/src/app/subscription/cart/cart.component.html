@@ -1,1 +1,55 @@
-<p>cart works!</p>
+<div class="cart d-flex justify-content-between flex-column p-3">
+  <div>
+    <div class="d-flex border-bottom mb-3 pb-2 align-items-center">
+      <svg width="22" height="22">
+        <use href="/assets/icons/sprite.svg#cart2"></use>
+      </svg>
+      <h5 class="m-0">Cart</h5>
+    </div>
+
+    <div *ngIf="cartItems.length === 0">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="cart-item mb-2 d-flex" *ngFor="let item of cartItems">
+      <span>{{ item.name }}</span>
+      <div class="d-flex align-items-top">
+        <div>
+          <div>
+            <small>
+              {{ item.quantity }} {{ item.quantity > 1 ? 'plans' : 'plan' }} at
+            </small>
+            <small>${{ item.price || item.monthlyPrice }}</small>
+          </div>
+          <p class="m-0 small-sub-text text-end">
+            <small>billed {{duration}}</small>
+          </p>
+        </div>
+        <button class="del-btn button" (click)="deleteCartItem(item)">
+          <svg width="18" height="18">
+            <use href="/assets/icons/sprite.svg#x-icon"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="text-end mt-3">
+      <div class="row totals m-0 mb-3">
+        <div class="col-6 text-start">
+          <span>Today's total</span>
+          <p class="m-0 small-sub-text">
+            <small>renew monthly on March 12/25</small>
+          </p>
+        </div>
+        <strong class="col-6">${{ total | number: '1.2-2' }}</strong>
+      </div>
+      <button
+        class="btn checkout-btn"
+        [disabled]="!isCartNotEmpty()"
+        (click)="goToCheckout()"
+      >
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>

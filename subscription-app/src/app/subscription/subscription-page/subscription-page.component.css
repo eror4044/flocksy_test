@@ -1,0 +1,43 @@
+.subscription-page {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.subscription-tabs .nav-link {
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-item{
+  position: relative;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 4px;
+  background-color: #8b52ff;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.subscription-tabs .nav-link.active {
+  color: #000;
+  background-color: #fff;
+}
+
+.checkout-btn {
+  width: 100%;
+  font-weight: 600;
+}
+

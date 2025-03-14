@@ -1,1 +1,68 @@
-<p>subscription-page works!</p>
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="subscription-page">
+    <div class="row mb-4">
+      <div class="col-12 text-start">
+        <h2 class="page-title">Choose a Plan</h2>
+      </div>
+    </div>
+    <ul class="nav nav-tabs subscription-tabs mb-5">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{'active': selectedDuration === 'monthly'}"
+          (click)="setDuration('monthly')"
+        >
+          Monthly
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{'active': selectedDuration === 'quarterly'}"
+          (click)="setDuration('quarterly')"
+        >
+          Quarterly
+        </a>
+        <span class="badge">Save 10%</span>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [ngClass]="{'active': selectedDuration === 'yearly'}"
+          (click)="setDuration('yearly')"
+        >
+          Yearly
+        </a>
+        <span class="badge">Save 15%</span>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col-lg-8 mb-3">
+        <app-plan-selection
+          [duration]="selectedDuration"
+          class="plans-section"
+        ></app-plan-selection>
+        <div class="row">
+          <app-benefits-item
+            imageSrc="https://dummyimage.com/140x140/d4d4d4/4e4f61.png"
+            altText="Stock Photos Icon"
+            title="Licensed Stock Photos and Video Footage"
+            subtitle="Included with all plans"
+            class="col"
+          ></app-benefits-item>
+          <app-benefits-item
+            imageSrc="https://dummyimage.com/140x140/d4d4d4/4e4f61.png"
+            altText="Money Back Icon"
+            title="14-Day Money Back Guarantee"
+            subtitle="Included with all plans"
+            class="col"
+          ></app-benefits-item>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <app-cart [duration]="selectedDuration" class="cart-section"></app-cart>
+      </div>
+    </div>
+  </div>
+</div>

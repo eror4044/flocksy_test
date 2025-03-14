@@ -1,1 +1,28 @@
-<p>plan-selection works!</p>
+<div class="plans-section mb-5">
+  <div
+    class="plan-item m-0 row align-items-center mb-3"
+    *ngFor="let plan of plans"
+  >
+    <div class="col-sm-6 d-flex gap-2 align-items-center">
+      <h5 class="mb-0">{{ plan.name }}</h5>
+      <svg width="18" height="18">
+        <use href="/assets/icons/sprite.svg#exclamation-circle"></use>
+      </svg>
+    </div>
+    <div class="col-sm-2">
+      <select
+        class="form-select"
+        [(ngModel)]="plan.quantity"
+        (change)="onQuantityChange(plan)"
+      >
+        <option *ngFor="let q of quantities" [value]="q">{{ q }}</option>
+      </select>
+    </div>
+    <div class="col-sm-4 text-end column">
+      <span class="plan-price">
+        ${{ getPlanPrice(plan) }}
+      </span>
+      <span class="plan-price-period">/ {{ duration }}</span>
+    </div>
+  </div>
+</div>
